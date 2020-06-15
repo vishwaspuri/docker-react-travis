@@ -6,7 +6,7 @@ before-install:
     - docker build -t vishwaspuri/docker-react-travis -f Dockerfile.dev .
     
 scripts:
-    - docker run vishwaspuri/docker-react-travis npm run test -- --coverage    
+    - docker run -e CI=true vishwaspuri/docker-react-travis npm run test   
 
 deploy:
     provider: elasticbeanstalk
